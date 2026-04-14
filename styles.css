@@ -168,15 +168,19 @@ a {
 }
 
 .presentation-section {
-  min-height: clamp(18rem, 64vh, 38rem);
+  min-height: clamp(24rem, 86vh, 54rem);
   display: flex;
-  align-items: stretch;
-  padding: 0.75rem 15.6rem 0.75rem 0.9rem;
+  align-items: flex-start;
+  padding: 0.3rem 15.6rem 0.3rem 0.9rem;
   opacity: 0;
   transform: translateY(1.25rem);
   transition:
     opacity 420ms ease,
     transform 420ms ease;
+}
+
+#title.presentation-section {
+  align-items: stretch;
 }
 
 .presentation-section.is-visible {
@@ -187,8 +191,9 @@ a {
 .section-shell {
   position: relative;
   width: min(1240px, 100%);
-  margin: auto;
-  padding: 1.35rem 1.45rem 1.25rem;
+  min-height: auto;
+  margin: 0 auto;
+  padding: 1.7rem 1.7rem 1.55rem;
   border: 1px solid var(--panel-border);
   border-radius: var(--radius-xl);
   background:
@@ -197,12 +202,22 @@ a {
   overflow: hidden;
 }
 
+#title .section-shell {
+  min-height: 100%;
+}
+
+.section-shell:not(.hero-shell) {
+  display: grid;
+  align-content: start;
+  row-gap: 1.45rem;
+}
+
 .section-shell::before {
   content: "";
   position: absolute;
-  top: 1rem;
-  left: 1.3rem;
-  right: 1.3rem;
+  top: 1.15rem;
+  left: 1.55rem;
+  right: 1.55rem;
   height: 1px;
   background: rgba(255, 255, 255, 0.22);
 }
@@ -222,17 +237,18 @@ a {
 .team-grid,
 .hero-summary {
   display: grid;
-  gap: 0.9rem;
+  gap: 1.05rem;
 }
 
 .hero-shell {
   grid-template-columns: 1fr;
   align-items: start;
+  gap: 1.35rem;
 }
 
 .hero-top {
   display: grid;
-  gap: 0.25rem;
+  gap: 0.7rem;
 }
 
 .hero-top h1 {
@@ -241,7 +257,7 @@ a {
 
 .hero-footer {
   grid-column: 1 / -1;
-  padding-top: 0.1rem;
+  padding-top: 0.8rem;
 }
 
 .hero-footer .hero-lead {
@@ -252,14 +268,17 @@ a {
 .feature-layout {
   grid-template-columns: minmax(0, 1.05fr) minmax(19rem, 0.95fr);
   align-items: start;
+  row-gap: 1.2rem;
 }
 
 .grid-two {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  row-gap: 1.2rem;
 }
 
 .grid-three {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  row-gap: 1.2rem;
 }
 
 .hero-summary {
@@ -268,14 +287,17 @@ a {
 
 .metric-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  row-gap: 1.2rem;
 }
 
 .metric-grid--hero {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.2rem;
 }
 
 .journey-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  row-gap: 1.2rem;
 }
 
 .loop-grid {
@@ -287,15 +309,17 @@ a {
 }
 
 .section-heading {
+  display: grid;
+  gap: 0.8rem;
   max-width: none;
-  margin-bottom: 0.95rem;
-  padding-top: 0.25rem;
+  margin-bottom: 0;
+  padding-top: 0.55rem;
 }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  margin: 0 0 0.55rem;
+  margin: 0 0 0.8rem;
   padding-right: 0.45rem;
   background: var(--panel);
   font-size: 0.7rem;
@@ -311,7 +335,7 @@ h3 {
   margin: 0;
   font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
-  line-height: 0.96;
+  line-height: 1.02;
   letter-spacing: -0.05em;
 }
 
@@ -323,6 +347,7 @@ h1 {
 h2 {
   max-width: none;
   font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.08;
 }
 
 h3 {
@@ -340,9 +365,14 @@ a {
 .hero-lead,
 .section-intro {
   max-width: 52rem;
-  margin: 0.28rem 0 0;
+  margin: 0.4rem 0 0;
   color: var(--ink-soft);
   font-size: clamp(0.98rem, 1.45vw, 1.06rem);
+}
+
+.section-heading > .eyebrow,
+.section-heading > .section-intro {
+  margin: 0;
 }
 
 .brand-row {
@@ -350,8 +380,8 @@ a {
   align-items: center;
   gap: 0.9rem;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
-  padding-top: 0.15rem;
+  margin-bottom: 1.45rem;
+  padding-top: 0.3rem;
 }
 
 .brand-row__logo {
@@ -423,7 +453,7 @@ a {
 .integration-strip,
 .product-panel,
 .quote-band {
-  padding: 0.95rem 1rem;
+  padding: 1.1rem 1.1rem;
 }
 
 .summary-card,
@@ -501,7 +531,7 @@ a {
 .hero-visuals,
 .stack-column {
   display: grid;
-  gap: 0.9rem;
+  gap: 1.05rem;
 }
 
 .video-frame {
@@ -595,11 +625,11 @@ a {
 }
 
 .feature-list li + li {
-  margin-top: 0.3rem;
+  margin-top: 0.5rem;
 }
 
 .feature-list--compact li + li {
-  margin-top: 0.24rem;
+  margin-top: 0.4rem;
 }
 
 .tag-matrix {
@@ -663,7 +693,7 @@ a {
 
 .quote-band {
   background: rgba(255, 255, 255, 0.04);
-  margin-top: 0.95rem;
+  margin-top: 0;
 }
 
 .illustration-card figcaption {
@@ -721,7 +751,7 @@ a {
 
 .journey-step,
 .signal-card {
-  min-height: 8rem;
+  min-height: 9rem;
 }
 
 .loop-flow {
@@ -729,7 +759,7 @@ a {
   align-items: center;
   gap: 0.45rem;
   flex-wrap: wrap;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 .loop-node {
@@ -991,7 +1021,7 @@ a {
   }
 
   .presentation-section {
-    padding: 0.6rem;
+    padding: 0.25rem 0.6rem;
   }
 
   .hero-shell,
@@ -1029,16 +1059,16 @@ a {
 
   .presentation-section {
     min-height: auto;
-    padding: 0.35rem;
+    padding: 0.22rem;
   }
 
   .section-shell {
-    padding: 1.05rem 1rem 1rem;
+    padding: 1.25rem 1.1rem 1.15rem;
   }
 
   .section-shell::before {
-    left: 0.9rem;
-    right: 0.9rem;
+    left: 1rem;
+    right: 1rem;
   }
 
   h1 {
