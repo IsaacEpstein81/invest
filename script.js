@@ -1,139 +1,132 @@
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const sections = [...document.querySelectorAll("[data-section]")];
+const navLinks = [...document.querySelectorAll(".deck-nav__link")];
+const currentSection = document.querySelector("[data-current-section]");
+const totalSections = document.querySelector("[data-total-sections]");
 
-const revealElements = [...document.querySelectorAll("[data-reveal]")];
-const counters = [...document.querySelectorAll("[data-counter]")];
-const navLinks = [...document.querySelectorAll(".site-nav a")];
-const sections = [...document.querySelectorAll("main section[id]")];
-const progressBar = document.getElementById("scroll-progress");
-const heroVisual = document.querySelector(".hero-visual");
+if (totalSections) {
+  totalSections.textContent = String(sections.length).padStart(2, "0");
+}
 
-const formatCounter = (value, decimals, prefix, suffix) => {
-  const formatted = value.toLocaleString("en-US", {
-    minimumFractionDigits: decimals,
-    maximumFractionDigits: decimals,
+const revealSection = (section) => {
+  if (!section) {
+    return;
+  }
+
+  section.classList.add("is-visible");
+};
+
+const setActiveSection = (id) => {
+  const index = sections.findIndex((section) => section.id === id);
+
+  if (index === -1) {
+    return;
+  }
+
+  navLinks.forEach((link) => {
+    const isActive = link.getAttribute("href") === `#${id}`;
+    link.classList.toggle("is-active", isActive);
   });
 
-  return `${prefix}${formatted}${suffix}`;
+  if (currentSection) {
+    currentSection.textContent = String(index + 1).padStart(2, "0");
+  }
 };
 
-const animateCounter = (element) => {
-  if (element.dataset.counted === "true") {
-    return;
-  }
-
-  element.dataset.counted = "true";
-
-  const target = Number(element.dataset.target || "0");
-  const decimals = Number(element.dataset.decimals || "0");
-  const prefix = element.dataset.prefix || "";
-  const suffix = element.dataset.suffix || "";
-
-  if (reduceMotion) {
-    element.textContent = formatCounter(target, decimals, prefix, suffix);
-    return;
-  }
-
-  const startTime = performance.now();
-  const duration = 1400;
-
-  const tick = (timestamp) => {
-    const progress = Math.min((timestamp - startTime) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const value = target * eased;
-
-    element.textContent = formatCounter(value, decimals, prefix, suffix);
-
-    if (progress < 1) {
-      window.requestAnimationFrame(tick);
-    } else {
-      element.textContent = formatCounter(target, decimals, prefix, suffix);
-    }
-  };
-
-  window.requestAnimationFrame(tick);
-};
-
-const revealObserver = new IntersectionObserver(
+const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) {
         return;
       }
 
-      entry.target.classList.add("is-visible");
-
-      if (entry.target.querySelector("[data-counter]")) {
-        entry.target.querySelectorAll("[data-counter]").forEach(animateCounter);
-      }
-
-      if (entry.target.matches("[data-counter]")) {
-        animateCounter(entry.target);
-      }
-
-      revealObserver.unobserve(entry.target);
+      revealSection(entry.target);
+      setActiveSection(entry.target.id);
     });
   },
   {
-    threshold: 0.18,
-    rootMargin: "0px 0px -8% 0px",
+    threshold: 0.28,
+    rootMargin: "-8% 0px -24% 0px",
   },
 );
 
-revealElements.forEach((element) => revealObserver.observe(element));
-counters.forEach((counter) => revealObserver.observe(counter));
+sections.forEach((section) => {
+  revealSection(section);
+  observer.observe(section);
+});
 
-const updateProgress = () => {
-  const max = document.documentElement.scrollHeight - window.innerHeight;
-  const value = max > 0 ? (window.scrollY / max) * 100 : 0;
-  progressBar.style.width = `${value}%`;
+const getNearestSectionIndex = () => {
+  let nearestIndex = 0;
+  let nearestDistance = Number.POSITIVE_INFINITY;
+
+  sections.forEach((section, index) => {
+    const distance = Math.abs(section.getBoundingClientRect().top);
+
+    if (distance < nearestDistance) {
+      nearestDistance = distance;
+      nearestIndex = index;
+    }
+  });
+
+  return nearestIndex;
 };
 
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      const targetId = entry.target.getAttribute("id");
-      const matchingLink = navLinks.find(
-        (link) => link.getAttribute("href") === `#${targetId}`,
-      );
+const goToSection = (section) => {
+  if (!section) {
+    return;
+  }
 
-      if (!matchingLink) {
-        return;
-      }
+  revealSection(section);
+  setActiveSection(section.id);
+  section.scrollIntoView({ behavior: "smooth", block: "start" });
+};
 
-      if (entry.isIntersecting) {
-        navLinks.forEach((link) => link.classList.remove("is-active"));
-        matchingLink.classList.add("is-active");
-      }
-    });
-  },
-  {
-    threshold: 0.38,
-  },
-);
+const initialTarget = window.location.hash
+  ? document.querySelector(window.location.hash)
+  : sections[0];
 
-sections.forEach((section) => sectionObserver.observe(section));
+if (initialTarget) {
+  revealSection(initialTarget);
+  setActiveSection(initialTarget.id);
+}
 
-if (heroVisual && !reduceMotion) {
-  window.addEventListener("pointermove", (event) => {
-    const rect = heroVisual.getBoundingClientRect();
-    const inside =
-      event.clientX >= rect.left &&
-      event.clientX <= rect.right &&
-      event.clientY >= rect.top &&
-      event.clientY <= rect.bottom;
+navLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const targetId = link.getAttribute("href");
+    const target = document.querySelector(targetId);
 
-    if (!inside) {
-      heroVisual.style.transform = "";
+    if (!target) {
       return;
     }
 
-    const x = (event.clientX - rect.left) / rect.width - 0.5;
-    const y = (event.clientY - rect.top) / rect.height - 0.5;
-
-    heroVisual.style.transform = `translate3d(${x * 10}px, ${y * 10}px, 0)`;
+    event.preventDefault();
+    goToSection(target);
   });
-}
+});
 
-window.addEventListener("scroll", updateProgress, { passive: true });
-window.addEventListener("resize", updateProgress);
-updateProgress();
+document.addEventListener("keydown", (event) => {
+  const isInteractive = ["INPUT", "TEXTAREA", "SELECT", "BUTTON"].includes(
+    document.activeElement?.tagName,
+  );
+
+  if (isInteractive) {
+    return;
+  }
+
+  const currentIndex = getNearestSectionIndex();
+  let targetIndex = currentIndex;
+
+  if (["ArrowDown", "PageDown", " "].includes(event.key)) {
+    targetIndex = Math.min(currentIndex + 1, sections.length - 1);
+  } else if (["ArrowUp", "PageUp"].includes(event.key)) {
+    targetIndex = Math.max(currentIndex - 1, 0);
+  } else if (event.key === "Home") {
+    targetIndex = 0;
+  } else if (event.key === "End") {
+    targetIndex = sections.length - 1;
+  } else {
+    return;
+  }
+
+  event.preventDefault();
+  goToSection(sections[targetIndex]);
+});

@@ -1,693 +1,640 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>OpenRecovery | Investor Site Draft</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenRecovery | Build the system that learns how people change</title>
     <meta
       name="description"
-      content="OpenRecovery builds the system that captures, structures, and improves behavioral change at scale."
+      content="OpenRecovery investor pitch deck website. Training is the wedge that turns behavioral health workflows into a compounding intelligence system."
     >
-    <script>
-      document.documentElement.classList.add("js-enabled");
-    </script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <div class="page-shell">
-      <div class="ambient ambient-one" aria-hidden="true"></div>
-      <div class="ambient ambient-two" aria-hidden="true"></div>
-      <div class="ambient ambient-grid" aria-hidden="true"></div>
+    <div class="ambient ambient--one" aria-hidden="true"></div>
+    <div class="ambient ambient--two" aria-hidden="true"></div>
+    <div class="grid-overlay" aria-hidden="true"></div>
 
-      <header class="site-header">
-        <div class="header-shell">
-          <a class="brand" href="#top">
-            <span class="brand-mark">OR</span>
-            <span class="brand-name">OpenRecovery</span>
-          </a>
-          <nav class="site-nav" aria-label="Primary">
-            <a href="#problem">Problem</a>
-            <a href="#engine">Engine</a>
-            <a href="#proof">Proof</a>
-            <a href="#opportunity">Opportunity</a>
-            <a href="#raise">Raise</a>
-          </nav>
-          <a class="header-cta" href="mailto:zachary@openrecovery.com">Contact</a>
+    <nav class="deck-nav" aria-label="Pitch deck navigation">
+      <div class="deck-nav__header">
+        <div>
+          <p class="deck-nav__eyebrow">OpenRecovery</p>
+          <p class="deck-nav__title">Seed Deck</p>
         </div>
-        <div class="progress-bar" aria-hidden="true">
-          <span id="scroll-progress"></span>
-        </div>
-      </header>
+        <p class="deck-nav__count">
+          <span data-current-section>01</span>
+          <span>/</span>
+          <span data-total-sections>13</span>
+        </p>
+      </div>
 
-      <main id="top">
-        <section class="hero panel">
-          <div class="section-shell hero-shell">
-            <div class="hero-copy" data-reveal>
-              <p class="eyebrow">Behavioral Change Intelligence</p>
-              <h1>Understand how people change.</h1>
-              <p class="lead">
-                OpenRecovery builds the system that captures, structures, and
-                improves behavioral change at scale.
-              </p>
-              <p class="support-copy">
-                We start in behavioral health, where the need is urgent, the
-                workflows are complex, and the cost of disconnected systems is
-                already visible.
-              </p>
-              <div class="hero-actions">
-                <a class="button button-primary" href="#problem">View the story</a>
-                <a class="button button-secondary" href="#raise">See the raise</a>
-              </div>
-              <ul class="hero-tags" aria-label="Key themes">
-                <li>Scale</li>
-                <li>Data moat</li>
-                <li>Compounding system</li>
-                <li>Category ambition</li>
-              </ul>
+      <div class="deck-nav__links">
+        <a class="deck-nav__link is-active" href="#title">Title</a>
+        <a class="deck-nav__link" href="#reality">Reality</a>
+        <a class="deck-nav__link" href="#broken">Broken</a>
+        <a class="deck-nav__link" href="#wedge">Wedge</a>
+        <a class="deck-nav__link" href="#economics">Economics</a>
+        <a class="deck-nav__link" href="#visibility">Visibility</a>
+        <a class="deck-nav__link" href="#connected">Connected</a>
+        <a class="deck-nav__link" href="#expansion">Expansion</a>
+        <a class="deck-nav__link" href="#compounding">Compounding</a>
+        <a class="deck-nav__link" href="#traction">Traction</a>
+        <a class="deck-nav__link" href="#market">Market</a>
+        <a class="deck-nav__link" href="#team">Team</a>
+        <a class="deck-nav__link" href="#raise">Raise</a>
+      </div>
+    </nav>
+
+    <main class="deck">
+      <section class="presentation-section is-visible" id="title" data-section>
+        <div class="section-shell hero-shell">
+          <div class="hero-copy">
+            <div class="brand-row">
+              <img
+                class="brand-row__logo"
+                src="./assets/open_recovery_logo.webp"
+                alt="OpenRecovery logo"
+              >
+              <span class="deck-badge">Investor pitch</span>
             </div>
 
-            <div class="hero-visual" data-reveal>
-              <div class="signal-stage" aria-hidden="true">
-                <div class="stage-ring stage-ring-a"></div>
-                <div class="stage-ring stage-ring-b"></div>
-                <div class="stage-ring stage-ring-c"></div>
-
-                <div class="orbit-track orbit-track-hero hero-track-training">
-                  <div class="orbit-anchor">
-                    <div class="orbit-upright">
-                      <div class="stage-node">
-                        <span>Training</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="orbit-track orbit-track-hero hero-track-signals">
-                  <div class="orbit-anchor">
-                    <div class="orbit-upright">
-                      <div class="stage-node">
-                        <span>Signals</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="orbit-track orbit-track-hero hero-track-resources">
-                  <div class="orbit-anchor">
-                    <div class="orbit-upright">
-                      <div class="stage-node">
-                        <span>Resources</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="orbit-track orbit-track-hero hero-track-engagement">
-                  <div class="orbit-anchor">
-                    <div class="orbit-upright">
-                      <div class="stage-node">
-                        <span>Engagement</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="orbit-track orbit-track-hero hero-track-outcomes">
-                  <div class="orbit-anchor">
-                    <div class="orbit-upright">
-                      <div class="stage-node">
-                        <span>Outcomes</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="orbit-track orbit-track-hero hero-track-recommendations">
-                  <div class="orbit-anchor">
-                    <div class="orbit-upright">
-                      <div class="stage-node">
-                        <span>Recommendations</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="stage-core">
-                  <p class="stage-label">OpenRecovery</p>
-                  <h2>Capture<br>Structure<br>Improve</h2>
-                </div>
-
-                <div class="orbit-track orbit-track-hero hero-track-loop">
-                  <div class="orbit-anchor">
-                    <div class="orbit-upright">
-                      <div class="floating-card floating-card-left">
-                        <p class="floating-label">Compounding loop</p>
-                        <p class="floating-copy">
-                          Actions, interventions, engagement, and outcomes
-                          become structured intelligence.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="orbit-track orbit-track-hero hero-track-raise">
-                  <div class="orbit-anchor">
-                    <div class="orbit-upright">
-                      <div class="floating-card floating-card-right">
-                        <p class="floating-label">Raise</p>
-                        <p class="floating-copy">$4.5M seed at a $15M pre.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="signal-line signal-line-one"></div>
-                <div class="signal-line signal-line-two"></div>
-                <div class="signal-line signal-line-three"></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="panel" id="problem">
-          <div class="section-shell">
-            <div class="section-heading" data-reveal>
-              <p class="eyebrow">The Problem</p>
-              <h2>Behavioral change is everywhere. There is no system that learns from it.</h2>
-              <p class="section-intro">
-                Organizations spend enormous effort helping people change, but
-                the intelligence created by that work rarely compounds. Training
-                stays static, resources remain fragmented, behavior between
-                interactions is largely invisible, and what works almost never
-                becomes infrastructure.
-              </p>
-            </div>
-
-            <div class="problem-grid">
-              <article class="problem-card" data-reveal>
-                <p class="card-index">01</p>
-                <h3>Static training</h3>
-                <p>
-                  Training is often passive, inconsistent, and disconnected
-                  from real outcomes.
-                </p>
-              </article>
-
-              <article class="problem-card" data-reveal>
-                <p class="card-index">02</p>
-                <h3>Fragmented resources</h3>
-                <p>
-                  Knowledge lives across documents, teams, and tools, making it
-                  hard to govern, reuse, or improve.
-                </p>
-              </article>
-
-              <article class="problem-card" data-reveal>
-                <p class="card-index">03</p>
-                <h3>Invisible behavior</h3>
-                <p>
-                  What happens between sessions and interventions is often the
-                  most important signal and the least visible.
-                </p>
-              </article>
-
-              <article class="problem-card" data-reveal>
-                <p class="card-index">04</p>
-                <h3>No compounding system</h3>
-                <p>
-                  Even when an organization learns what works, that learning
-                  rarely improves the next workflow or the next team.
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="panel" id="system">
-          <div class="section-shell">
-            <div class="section-heading" data-reveal>
-              <p class="eyebrow">What We Do</p>
-              <h2>We turn real-world behavior into structured intelligence.</h2>
-              <p class="section-intro">
-                OpenRecovery deploys software inside live workflows, where
-                behavior is already happening. We capture signals, structure
-                them into usable intelligence, and improve the surrounding
-                system over time.
-              </p>
-            </div>
-
-            <div class="system-board">
-              <div class="system-rail" aria-hidden="true">
-                <span>Capture</span>
-                <span>Structure</span>
-                <span>Improve</span>
-              </div>
-
-              <div class="wedge-grid">
-                <article class="wedge-card" data-reveal>
-                  <p class="wedge-label">Starting wedge</p>
-                  <h3>Training</h3>
-                  <p>
-                    Improve simulation, readiness, and performance in
-                    high-stakes environments.
-                  </p>
-                </article>
-
-                <article class="wedge-card" data-reveal>
-                  <p class="wedge-label">Starting wedge</p>
-                  <h3>Resource systems</h3>
-                  <p>
-                    Structure and govern institutional knowledge so it can be
-                    searched, trusted, and applied.
-                  </p>
-                </article>
-
-                <article class="wedge-card" data-reveal>
-                  <p class="wedge-label">Starting wedge</p>
-                  <h3>Client engagement</h3>
-                  <p>
-                    Extend support between formal interactions and create
-                    visibility into follow-through.
-                  </p>
-                </article>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="panel" id="engine">
-          <div class="section-shell engine-shell">
-            <div class="section-heading" data-reveal>
-              <p class="eyebrow">Why It Compounds</p>
-              <h2>Every interaction makes the system smarter.</h2>
-              <p class="section-intro">
-                The value is not just in individual tools. It comes from the
-                loop. OpenRecovery connects training to performance, resources
-                to usage and outcomes, and engagement to action and
-                follow-through.
-              </p>
-            </div>
-
-            <div class="engine-layout">
-              <div class="engine-orbit" data-reveal>
-                <div class="orbit-center">
-                  <span>Compounding</span>
-                  <strong>Intelligence<br>System</strong>
-                </div>
-
-                <div class="orbit-track orbit-track-engine engine-track-a">
-                  <div class="orbit-anchor">
-                    <div class="orbit-upright">
-                      <div class="orbit-node">
-                        <strong>Training</strong>
-                        <span>Performance</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="orbit-track orbit-track-engine engine-track-b">
-                  <div class="orbit-anchor">
-                    <div class="orbit-upright">
-                      <div class="orbit-node">
-                        <strong>Resources</strong>
-                        <span>Usage + outcomes</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="orbit-track orbit-track-engine engine-track-c">
-                  <div class="orbit-anchor">
-                    <div class="orbit-upright">
-                      <div class="orbit-node">
-                        <strong>Engagement</strong>
-                        <span>Action + follow-through</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="engine-copy" data-reveal>
-                <div class="engine-result">
-                  <p class="engine-result-label">The result</p>
-                  <ul class="result-list">
-                    <li>Better recommendations</li>
-                    <li>Earlier signals</li>
-                    <li>Improved outcomes over time</li>
-                  </ul>
-                </div>
-                <p class="engine-close">
-                  This is how operational software becomes a compounding
-                  intelligence layer.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="panel" id="proof">
-          <div class="section-shell">
-            <div class="section-heading" data-reveal>
-              <p class="eyebrow">Proof</p>
-              <h2>Already embedding into provider workflows.</h2>
-              <p class="section-intro">
-                The early signs are not just adoption, but depth: repeat
-                workflows, embedded systems, and a growing foundation for
-                compounding data.
-              </p>
-            </div>
-
-            <div class="proof-grid">
-              <article class="proof-card" data-reveal>
-                <p class="proof-label">Provider orgs live / signed</p>
-                <p
-                  class="proof-value"
-                  data-counter
-                  data-target="25"
-                  data-suffix="+"
-                  data-decimals="0"
-                >25+</p>
-              </article>
-
-              <article class="proof-card" data-reveal>
-                <p class="proof-label">ARR</p>
-                <p
-                  class="proof-value"
-                  data-counter
-                  data-target="1.01"
-                  data-prefix="$"
-                  data-suffix="M"
-                  data-decimals="2"
-                >$1.01M</p>
-              </article>
-
-              <article class="proof-card" data-reveal>
-                <p class="proof-label">Enterprise deals signed</p>
-                <p
-                  class="proof-value"
-                  data-counter
-                  data-target="4"
-                  data-suffix=""
-                  data-decimals="0"
-                >4</p>
-              </article>
-
-              <article class="proof-card" data-reveal>
-                <p class="proof-label">Clients in app + communities</p>
-                <p
-                  class="proof-value"
-                  data-counter
-                  data-target="80"
-                  data-suffix="K+"
-                  data-decimals="0"
-                >80K+</p>
-              </article>
-
-              <article class="proof-card" data-reveal>
-                <p class="proof-label">AI conversations + notes processed</p>
-                <p
-                  class="proof-value"
-                  data-counter
-                  data-target="2.6"
-                  data-suffix="M"
-                  data-decimals="1"
-                >2.6M</p>
-              </article>
-            </div>
-
-            <div class="proof-support">
-              <div class="proof-cluster" data-reveal>
-                <p class="cluster-title">Clients</p>
-                <div class="pill-row">
-                  <span>Zia Recovery Center</span>
-                  <span>Ignitus Health</span>
-                </div>
-              </div>
-
-              <div class="proof-cluster" data-reveal>
-                <p class="cluster-title">Strategic / ecosystem partners</p>
-                <div class="pill-row">
-                  <span>SMART Recovery</span>
-                  <span>WEconnect Health</span>
-                  <span>CCAR</span>
-                  <span>IC&amp;RC</span>
-                  <span>Illinois Certification Board</span>
-                  <span>TPAS</span>
-                </div>
-              </div>
-            </div>
-
-            <p class="verification-note" data-reveal>
-              Initial proof figures and partner references are sourced from the
-              current deck and should be verified before public launch.
+            <p class="eyebrow">Slide 01</p>
+            <h1>Build the system that learns how people change.</h1>
+            <p class="hero-lead">
+              Start with training. Expand into workflows. Become the intelligence layer
+              behavioral health organizations rely on.
             </p>
           </div>
-        </section>
 
-        <section class="panel" id="market">
-          <div class="section-shell">
-            <div class="section-heading" data-reveal>
-              <p class="eyebrow">Go-To-Market</p>
-              <h2>We land through two wedges.</h2>
-              <p class="section-intro">
-                We enter where the pain is immediate, the workflow is clear,
-                and the value is measurable.
+          <div class="hero-visuals">
+            <article class="hero-panel hero-panel--spotlight">
+              <p class="hero-panel__kicker">System thesis</p>
+              <p class="hero-panel__headline">
+                OpenRecovery turns training, performance data, and organizational
+                knowledge into one compounding system.
               </p>
-            </div>
+            </article>
 
-            <div class="market-grid">
-              <article class="market-card" data-reveal>
-                <p class="market-index">01</p>
-                <h3>Capacity Development</h3>
-                <ul class="market-list">
-                  <li>Replace LMS</li>
-                  <li>Improve training and readiness</li>
-                  <li>Create measurable performance signals</li>
-                </ul>
+            <div class="metric-grid">
+              <article class="metric-card">
+                <p class="metric-card__value">$420K</p>
+                <p class="metric-card__label">ARR</p>
               </article>
-
-              <article class="market-card" data-reveal>
-                <p class="market-index">02</p>
-                <h3>Resource Systems</h3>
-                <ul class="market-list">
-                  <li>Structure and govern resources</li>
-                  <li>Enable recommendation workflows</li>
-                  <li>Reduce operational fragmentation</li>
-                </ul>
+              <article class="metric-card">
+                <p class="metric-card__value">6</p>
+                <p class="metric-card__label">Enterprise customers / signed deals</p>
               </article>
-            </div>
-
-            <div class="expansion-strip" data-reveal>
-              <p class="expansion-label">Then expand into</p>
-              <div class="pill-row">
-                <span>Engagement</span>
-                <span>Supervision</span>
-                <span>Intelligence</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="panel" id="why-now">
-          <div class="section-shell">
-            <div class="section-heading" data-reveal>
-              <p class="eyebrow">Why Now</p>
-              <h2>The market is moving before providers are ready.</h2>
-              <p class="section-intro">
-                Demand is rising while the workforce remains constrained. AI is
-                entering through generic tools that do not preserve provider
-                control, institutional knowledge, or outcome integrity.
-              </p>
-            </div>
-
-            <div class="choice-grid">
-              <article class="choice-card choice-risk" data-reveal>
-                <p class="choice-label">Generic path</p>
-                <h3>Adopt wrappers that providers do not control.</h3>
-                <ul class="choice-list">
-                  <li>Client relationships become less defensible</li>
-                  <li>Institutional knowledge stays unstructured</li>
-                  <li>Behavior does not connect cleanly to outcomes</li>
-                </ul>
+              <article class="metric-card">
+                <p class="metric-card__value">$3.8M</p>
+                <p class="metric-card__label">Active pipeline</p>
               </article>
-
-              <article class="choice-card choice-sovereign" data-reveal>
-                <p class="choice-label">Provider-controlled path</p>
-                <h3>Deploy infrastructure that learns inside the workflow.</h3>
-                <ul class="choice-list">
-                  <li>Governed systems, not generic overlays</li>
-                  <li>Compounding operational and behavioral data</li>
-                  <li>Earlier signals and better organizational control</li>
-                </ul>
+              <article class="metric-card metric-card--accent">
+                <p class="metric-card__value">~2M</p>
+                <p class="metric-card__label">AI recovery conversations</p>
               </article>
             </div>
           </div>
-        </section>
-
-        <section class="panel" id="opportunity">
-          <div class="section-shell opportunity-shell">
-            <div class="section-heading" data-reveal>
-              <p class="eyebrow">The Opportunity</p>
-              <h2>We are building the system that learns how people change.</h2>
-              <p class="section-intro">
-                Behavioral change is not a niche workflow. It underlies
-                healthcare, education, workforce development, and personal
-                growth. The long-term opportunity is the intelligence layer for
-                institutions trying to improve human outcomes at scale.
-              </p>
-            </div>
-
-            <div class="opportunity-layout">
-              <div class="opportunity-copy" data-reveal>
-                <p class="opportunity-text">
-                  Start where the wedge is strongest. Build where the feedback
-                  loop is richest. Expand where the system already has the right
-                  to learn.
-                </p>
-              </div>
-
-              <div class="opportunity-orbit" data-reveal>
-                <div class="opportunity-core">
-                  <span>Behavioral change</span>
-                  <strong>Learning system</strong>
-                </div>
-
-                <div class="orbit-track orbit-track-opportunity opportunity-track-a">
-                  <div class="orbit-anchor">
-                    <div class="orbit-upright">
-                      <span class="opportunity-label">Healthcare</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="orbit-track orbit-track-opportunity opportunity-track-b">
-                  <div class="orbit-anchor">
-                    <div class="orbit-upright">
-                      <span class="opportunity-label">Education</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="orbit-track orbit-track-opportunity opportunity-track-c">
-                  <div class="orbit-anchor">
-                    <div class="orbit-upright">
-                      <span class="opportunity-label">Workforce</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="orbit-track orbit-track-opportunity opportunity-track-d">
-                  <div class="orbit-anchor">
-                    <div class="orbit-upright">
-                      <span class="opportunity-label">Personal growth</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="panel" id="diligence">
-          <div class="section-shell">
-            <div class="section-heading" data-reveal>
-              <p class="eyebrow">Supplemental Diligence</p>
-              <h2>Supporting systems and proof layers from the current deck.</h2>
-              <p class="section-intro">
-                These ideas sit beneath the main narrative. They help explain
-                how the platform manifests in product and operations without
-                taking over the story.
-              </p>
-            </div>
-
-            <div class="diligence-grid">
-              <article class="diligence-card" data-reveal>
-                <h3>High-fidelity AI roleplay training</h3>
-                <p>
-                  Simulation, scoring, and readiness signals that connect
-                  training to performance.
-                </p>
-              </article>
-
-              <article class="diligence-card" data-reveal>
-                <h3>Internal organizational copilot</h3>
-                <p>
-                  Governed access to policies, SOPs, and internal knowledge with
-                  exact source grounding.
-                </p>
-              </article>
-
-              <article class="diligence-card" data-reveal>
-                <h3>Supervision intelligence</h3>
-                <p>
-                  Signals that reduce manual review burden and surface earlier
-                  quality and risk insights.
-                </p>
-              </article>
-
-              <article class="diligence-card" data-reveal>
-                <h3>Provider-aligned client engagement</h3>
-                <p>
-                  Continuous support that stays aligned to provider methodology
-                  and preserves the relationship.
-                </p>
-              </article>
-
-              <article class="diligence-card" data-reveal>
-                <h3>MimicBench and model evaluation</h3>
-                <p>
-                  A supplemental proof layer for how OpenRecovery thinks about
-                  behavioral realism and training utility.
-                </p>
-              </article>
-
-              <article class="diligence-card" data-reveal>
-                <h3>Activation model and enterprise ramp</h3>
-                <p>
-                  A phased motion that starts with activation, then deepens into
-                  workflow-level infrastructure.
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="panel raise-panel-wrap" id="raise">
-          <div class="section-shell">
-            <div class="raise-panel" data-reveal>
-              <div class="raise-copy">
-                <p class="eyebrow">Raise</p>
-                <h2>Currently raising a $4.5M seed.</h2>
-                <p class="lead">$15M pre.</p>
-                <p class="support-copy">
-                  OpenRecovery is building the system that captures how change
-                  happens, structures it, and improves it over time.
-                </p>
-              </div>
-
-              <div class="raise-contact">
-                <p class="contact-label">Contact</p>
-                <p class="contact-name">Zachary Gidwitz</p>
-                <p class="contact-role">CEO, OpenRecovery</p>
-                <a class="contact-link" href="mailto:zachary@openrecovery.com">
-                  zachary@openrecovery.com
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <div class="section-shell footer-shell">
-          <p>Drafted from the DOCX-led investor framing. PDF content is treated as supplemental support.</p>
         </div>
-      </footer>
-    </div>
+      </section>
 
-    <script src="script.js"></script>
+      <section class="presentation-section" id="reality" data-section>
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Slide 02</p>
+            <h2>Behavioral health still runs on manual systems.</h2>
+            <p class="section-intro">Critical work. Fragmented operating model.</p>
+          </div>
+
+          <div class="feature-layout">
+            <div class="stack-column">
+              <article class="video-frame">
+                <iframe
+                  class="video-frame__embed"
+                  src="https://drive.google.com/file/d/1d0GbWQlBUKiOGJ4ReO64dKrv115XX805/preview"
+                  title="OpenRecovery overview video"
+                  allow="autoplay; encrypted-media; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </article>
+
+              <article class="quote-band">
+                <p class="quote-band__label">Core tension</p>
+                <p>The data exists. The learning system does not.</p>
+              </article>
+            </div>
+
+            <div class="stack-column">
+              <div class="grid-two">
+                <article class="glass-card">
+                  <p class="card-label">Must do</p>
+                  <ul class="feature-list">
+                    <li>Train staff</li>
+                    <li>Maintain compliance</li>
+                    <li>Supervise quality</li>
+                    <li>Support clients between sessions</li>
+                  </ul>
+                </article>
+
+                <article class="glass-card glass-card--accent">
+                  <p class="card-label">What breaks</p>
+                  <ul class="feature-list">
+                    <li>Training is manual and passive</li>
+                    <li>Knowledge is scattered</li>
+                    <li>Supervisors are overloaded</li>
+                    <li>Performance is hard to see</li>
+                  </ul>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="presentation-section" id="broken" data-section>
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Slide 03</p>
+            <h2>Behavioral health organizations are not short on knowledge. They are short on systems.</h2>
+            <p class="section-intro">
+              The knowledge exists. It just does not transfer reliably.
+            </p>
+          </div>
+
+          <div class="grid-two grid-two--wide">
+            <article class="glass-card">
+              <p class="card-label">What already exists</p>
+              <ul class="feature-list">
+                <li>Experienced staff</li>
+                <li>Lived recovery insight</li>
+                <li>Policies and procedures</li>
+                <li>Notes and documentation</li>
+                <li>Clinical frameworks</li>
+                <li>Hard-won know-how</li>
+              </ul>
+            </article>
+
+            <article class="glass-card glass-card--contrast">
+              <p class="card-label">Why it still breaks</p>
+              <ul class="feature-list">
+                <li>Knowledge stays trapped in people</li>
+                <li>Training is weak and inconsistent</li>
+                <li>Supervisors do not have time to train deeply</li>
+                <li>Mistakes repeat without feedback loops</li>
+                <li>Learning does not compound across the organization</li>
+              </ul>
+            </article>
+          </div>
+
+          <article class="quote-band">
+            <p class="quote-band__label">Missing link</p>
+            <p>Training is where knowledge becomes repeatable performance.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="presentation-section" id="wedge" data-section>
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Slide 04</p>
+            <h2>Training is the wedge.</h2>
+            <p class="section-intro">
+              Every provider already needs it. Passive LMS tools do not measure readiness.
+            </p>
+          </div>
+
+          <div class="grid-two">
+            <article class="glass-card glass-card--tall">
+              <p class="card-label">What OpenRecovery delivers</p>
+              <ul class="feature-list">
+                <li>AI roleplay</li>
+                <li>Learn-by-doing simulation</li>
+                <li>Competency-based training</li>
+                <li>Readiness validation</li>
+                <li>Compliance delivery</li>
+                <li>Policy access</li>
+              </ul>
+            </article>
+
+            <article class="glass-card glass-card--contrast">
+              <p class="card-label">Why it works</p>
+              <ul class="feature-list">
+                <li>Practice instead of click-through completion</li>
+                <li>Measured competency instead of assumed competency</li>
+                <li>Scalable supervision instead of repetitive manual training</li>
+              </ul>
+            </article>
+          </div>
+
+          <article class="quote-band">
+            <p class="quote-band__label">Bridge</p>
+            <p>Training connects organizational knowledge to real-world staff behavior.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="presentation-section" id="economics" data-section>
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Slide 05</p>
+            <h2>We improve the economics of workforce performance.</h2>
+            <p class="section-intro">Centers buy AI for leverage, not novelty.</p>
+          </div>
+
+          <div class="grid-three">
+            <article class="value-card">
+              <p class="value-card__title">Less manual burden</p>
+              <p>Leaders spend less time answering the same questions and managing fragmented workflows.</p>
+            </article>
+            <article class="value-card value-card--highlight">
+              <p class="value-card__title">Better readiness</p>
+              <p>New staff prove competency through practice instead of passive completion.</p>
+            </article>
+            <article class="value-card">
+              <p class="value-card__title">More consistent performance</p>
+              <p>Knowledge becomes available on demand instead of living in a few overloaded people.</p>
+            </article>
+          </div>
+
+          <article class="quote-band">
+            <p class="quote-band__label">Buying logic</p>
+            <p>Less manual burden. Faster readiness. More consistent execution.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="presentation-section" id="visibility" data-section>
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Slide 06</p>
+            <h2>We give organizations eyes on what they could not see before.</h2>
+            <p class="section-intro">OpenRecovery adds a QA/QC layer for workforce performance.</p>
+          </div>
+
+          <div class="grid-two">
+            <article class="glass-card">
+              <p class="card-label">What leaders miss today</p>
+              <ul class="feature-list">
+                <li>Who is ready</li>
+                <li>Where people struggle</li>
+                <li>What keeps repeating</li>
+                <li>What needs retraining now</li>
+              </ul>
+            </article>
+
+            <article class="glass-card glass-card--accent">
+              <p class="card-label">What OpenRecovery surfaces</p>
+              <ul class="feature-list">
+                <li>Controlled practice</li>
+                <li>Measurable readiness</li>
+                <li>Early gap detection</li>
+                <li>Repeatable coaching inputs</li>
+              </ul>
+            </article>
+          </div>
+
+          <article class="quote-band">
+            <p class="quote-band__label">Result</p>
+            <p>We bring quality control to behavioral health.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="presentation-section" id="connected" data-section>
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Slide 07</p>
+            <h2>When systems are connected, OpenRecovery becomes the useful layer on top of the EHR.</h2>
+            <p class="section-intro">
+              Once data connects, OpenRecovery becomes the useful layer above the EHR.
+            </p>
+          </div>
+
+          <div class="grid-three audience-grid">
+            <article class="audience-card">
+              <p class="audience-card__title">For owners</p>
+              <ul class="feature-list feature-list--compact">
+                <li>Earlier visibility into client drop-off and risk</li>
+                <li>Less staff time spent hunting for information</li>
+                <li>Less duplicate data entry over time</li>
+                <li>Better retention and staffing leverage</li>
+              </ul>
+            </article>
+
+            <article class="audience-card audience-card--highlight">
+              <p class="audience-card__title">For providers</p>
+              <ul class="feature-list feature-list--compact">
+                <li>One place to see the client and recent context</li>
+                <li>Better recommendations on what to do next</li>
+                <li>Faster access to policies, guidance, and resources</li>
+                <li>AI support that knows the organization</li>
+              </ul>
+            </article>
+
+            <article class="audience-card">
+              <p class="audience-card__title">For supervisors</p>
+              <ul class="feature-list feature-list--compact">
+                <li>See which clients and providers need attention first</li>
+                <li>Spot patterns across teams earlier</li>
+                <li>Track risk alerts, reports, and trends without digging</li>
+                <li>Know whether training changes outcomes</li>
+              </ul>
+            </article>
+          </div>
+
+          <article class="integration-strip">
+            <p class="integration-strip__label">Once EHR data is connected</p>
+            <p>
+              Notes, history, and context can populate profiles, risk scoring, and next
+              step recommendations automatically.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="presentation-section" id="expansion" data-section>
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Slide 08</p>
+            <h2>We start with training. Then OpenRecovery becomes part of how the organization operates.</h2>
+            <p class="section-intro">Come for training. Stay for infrastructure.</p>
+          </div>
+
+          <div class="journey-grid">
+            <article class="journey-step">
+              <p class="journey-step__phase">Phase 01</p>
+              <h3>Land with training</h3>
+              <p>Roleplay, readiness validation, compliance delivery, and policy access.</p>
+            </article>
+            <article class="journey-step">
+              <p class="journey-step__phase">Phase 02</p>
+              <h3>Embed knowledge</h3>
+              <p>Organizations add policies, workflows, and organizational memory.</p>
+            </article>
+            <article class="journey-step">
+              <p class="journey-step__phase">Phase 03</p>
+              <h3>Support operations</h3>
+              <p>Provider support, supervision tools, and repeatable coaching layers.</p>
+            </article>
+            <article class="journey-step journey-step--highlight">
+              <p class="journey-step__phase">Phase 04</p>
+              <h3>Compound intelligence</h3>
+              <p>Workflow integration, client engagement, and predictive risk intelligence.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="presentation-section" id="compounding" data-section>
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Slide 09</p>
+            <h2>We close the loop that other software leaves open.</h2>
+            <p class="section-intro">
+              OpenRecovery converts workflow activity into better execution.
+            </p>
+          </div>
+
+          <div class="loop-flow" aria-label="Compounding improvement loop">
+            <article class="loop-node">Knowledge</article>
+            <span class="loop-arrow" aria-hidden="true">→</span>
+            <article class="loop-node">Training</article>
+            <span class="loop-arrow" aria-hidden="true">→</span>
+            <article class="loop-node">Performance</article>
+            <span class="loop-arrow" aria-hidden="true">→</span>
+            <article class="loop-node">Analysis</article>
+            <span class="loop-arrow" aria-hidden="true">→</span>
+            <article class="loop-node">Retraining</article>
+            <span class="loop-arrow" aria-hidden="true">→</span>
+            <article class="loop-node loop-node--accent">Improvement</article>
+          </div>
+
+          <div class="grid-two">
+            <article class="glass-card">
+              <p class="card-label">Built-in head start</p>
+              <ul class="feature-list">
+                <li>Mobile app already in market</li>
+                <li>Real recovery engagement already happening</li>
+                <li>~2M conversations already captured</li>
+              </ul>
+            </article>
+
+            <article class="glass-card glass-card--contrast">
+              <p class="card-label">Moat equation</p>
+              <p class="moat-line">Workflows × Data × Intelligence × Reliance</p>
+              <p>More workflows create more signal, more insight, and more reliance.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="presentation-section" id="traction" data-section>
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Slide 10</p>
+            <h2>Early proof of demand is already visible.</h2>
+            <p class="section-intro">The training wedge is already selling.</p>
+          </div>
+
+          <div class="metric-grid metric-grid--traction">
+            <article class="metric-card">
+              <p class="metric-card__value">$420K</p>
+              <p class="metric-card__label">ARR</p>
+            </article>
+            <article class="metric-card">
+              <p class="metric-card__value">6</p>
+              <p class="metric-card__label">Enterprise customers / signed deals</p>
+            </article>
+            <article class="metric-card">
+              <p class="metric-card__value">$3.8M</p>
+              <p class="metric-card__label">Active pipeline</p>
+            </article>
+            <article class="metric-card">
+              <p class="metric-card__value">6+</p>
+              <p class="metric-card__label">Strategic ecosystem relationships</p>
+            </article>
+          </div>
+
+          <div class="grid-two grid-two--wide">
+            <article class="glass-card">
+              <p class="card-label">Customers / active relationships</p>
+              <ul class="feature-list">
+                <li>Zia Recovery</li>
+                <li>Ignitus Health</li>
+                <li>WEconnect Health</li>
+                <li>SMART Recovery</li>
+              </ul>
+            </article>
+
+            <article class="glass-card glass-card--accent">
+              <p class="card-label">Proof points</p>
+              <ul class="feature-list">
+                <li>WEconnect: roleplay, monitoring, data integration</li>
+                <li>Zia: roleplay, mobile app, supervisor expansion</li>
+                <li>Ignitus: AI training and org support</li>
+                <li>SMART Recovery: LMS and facilitator enablement</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="presentation-section" id="market" data-section>
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Slide 11</p>
+            <h2>Large market. Clear wedge. Multi-layer expansion.</h2>
+            <p class="section-intro">Land with training, then expand across the operating stack.</p>
+          </div>
+
+          <div class="grid-three">
+            <article class="glass-card">
+              <p class="card-label">Initial buyers</p>
+              <ul class="feature-list feature-list--compact">
+                <li>Treatment centers</li>
+                <li>Recovery organizations</li>
+                <li>Certification bodies</li>
+                <li>Workforce training organizations</li>
+                <li>Provider networks</li>
+              </ul>
+            </article>
+
+            <article class="glass-card glass-card--accent">
+              <p class="card-label">Go-to-market</p>
+              <ul class="feature-list feature-list--compact">
+                <li>Land with training, readiness, compliance, and policy access</li>
+                <li>Expand into supervision, knowledge, and workflow intelligence</li>
+                <li>Distribute through certification bodies and provider groups</li>
+              </ul>
+            </article>
+
+            <article class="glass-card glass-card--contrast">
+              <p class="card-label">Expansion path</p>
+              <p>Behavioral health first, then broader behavioral-change infrastructure.</p>
+            </article>
+          </div>
+
+          <div class="projection-card">
+            <div class="projection-card__header">
+              <p class="card-label">Illustrative projections</p>
+              <p>2026 $0.4M → 2027 $1.6M → 2028 $5.2M → 2029 $12.8M</p>
+            </div>
+
+            <div class="projection-bars" aria-label="Revenue projection bars">
+              <article class="projection-bar" style="--value: 0.12">
+                <span class="projection-bar__year">2026</span>
+                <span class="projection-bar__value">$0.4M</span>
+              </article>
+              <article class="projection-bar" style="--value: 0.34">
+                <span class="projection-bar__year">2027</span>
+                <span class="projection-bar__value">$1.6M</span>
+              </article>
+              <article class="projection-bar" style="--value: 0.62">
+                <span class="projection-bar__year">2028</span>
+                <span class="projection-bar__value">$5.2M</span>
+              </article>
+              <article class="projection-bar projection-bar--accent" style="--value: 1">
+                <span class="projection-bar__year">2029</span>
+                <span class="projection-bar__value">$12.8M</span>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="presentation-section" id="team" data-section>
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Slide 12</p>
+            <h2>Built by operators across behavioral health, AI, training, and platform infrastructure.</h2>
+            <p class="section-intro">Product, AI, mobile, infrastructure, training, and enterprise depth.</p>
+          </div>
+
+          <div class="team-grid">
+            <article class="team-card">
+              <p class="team-card__name">Zachary Gidwitz</p>
+              <p class="team-card__role">Founder &amp; CEO</p>
+            </article>
+            <article class="team-card">
+              <p class="team-card__name">Jon Moldofsky</p>
+              <p class="team-card__role">Head of Platform Engineering</p>
+            </article>
+            <article class="team-card">
+              <p class="team-card__name">Jack Li</p>
+              <p class="team-card__role">Head of Mobile Engineering</p>
+            </article>
+            <article class="team-card">
+              <p class="team-card__name">Ryan Anderson</p>
+              <p class="team-card__role">Head of Product</p>
+            </article>
+            <article class="team-card">
+              <p class="team-card__name">Benjamin Xia</p>
+              <p class="team-card__role">Head of AI</p>
+            </article>
+            <article class="team-card">
+              <p class="team-card__name">Nicolas Zhu</p>
+              <p class="team-card__role">Behavioral Intelligence</p>
+            </article>
+            <article class="team-card">
+              <p class="team-card__name">Tim Saunders</p>
+              <p class="team-card__role">Head of Training &amp; Simulation</p>
+            </article>
+            <article class="team-card">
+              <p class="team-card__name">Petar Vico</p>
+              <p class="team-card__role">Infrastructure &amp; DevOps</p>
+            </article>
+            <article class="team-card team-card--wide">
+              <p class="team-card__name">Isaac Epstein</p>
+              <p class="team-card__role">Head of Enterprise Partnerships</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="presentation-section" id="raise" data-section>
+        <div class="section-shell raise-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Slide 13</p>
+            <h2>We start with training. We expand into workflows. We become the intelligence layer organizations rely on.</h2>
+            <p class="section-intro">
+              OpenRecovery becomes embedded in how organizations operate.
+            </p>
+          </div>
+
+          <div class="grid-two">
+            <div class="vision-stack">
+              <article class="vision-card">
+                <p class="vision-card__title">System of training and readiness</p>
+              </article>
+              <article class="vision-card">
+                <p class="vision-card__title">System of visibility for workforce performance</p>
+              </article>
+              <article class="vision-card">
+                <p class="vision-card__title">System of intelligence for organizational improvement</p>
+              </article>
+              <article class="vision-card vision-card--highlight">
+                <p class="vision-card__title">Infrastructure layer for behavioral change</p>
+              </article>
+            </div>
+
+            <article class="raise-card">
+              <p class="raise-card__eyebrow">Raising</p>
+              <p class="raise-card__amount">$4.5M Seed</p>
+              <p class="raise-card__subtext">$15M pre-money</p>
+              <p class="raise-card__body">
+                Clear wedge. Credible expansion. Early traction already in market.
+              </p>
+              <div class="cta-row">
+                <a class="contact-button" href="mailto:zachary@openrecovery.com">
+                  Contact Zachary
+                </a>
+                <p class="contact-meta">Zachary Gidwitz, CEO · zachary@openrecovery.com</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
   </body>
 </html>
